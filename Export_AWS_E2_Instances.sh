@@ -11,7 +11,7 @@ set -x
 
 
 echo "Exporting EC2 instance details to ec2-instances.csv..."
-aws ec2 describe instances \
+aws ec2 describe-instances \
   --query "Reservations[*].Instances[*].{
     InstanceId: InstanceId,
     Name: Tags[?Key=='Name']|[0].Value,
